@@ -24,7 +24,7 @@
     </div>
 </div>
 <div id="button">
-    <button type="submit" onclick="">Посчитать</button>
+    <button type="submit">Посчитать</button>
 </div>
 <div>
     <div id="spent">
@@ -41,6 +41,9 @@
 
 <script>
     $(document).ready(function(){
+        $('#spentInput').attr('readonly', 'readonly');
+        $('#sumInput').attr('readonly', 'readonly');
+
         $('#button').on('click', function(){
             let fuel = $('#distanceInput').val() / $('#consumptionInput').val();
             let sum = fuel * $('#priceInput').val();
