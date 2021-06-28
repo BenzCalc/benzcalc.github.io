@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <title>Калькулятор расхода бензина</title>
+</head>
+<body>
+<div>
+    <div id="distance">
+        <input type="text" id="distanceInput">
+        <label for="distanceInput">Расстояние</label>
+    </div>
+    <div id="consumption">
+        <input type="text" id="consumptionInput">
+        <label for="consumptionInput">Средний расход топлива</label>
+    </div>
+    <div id="price">
+        <input type="text" id="priceInput">
+        <label for="priceInput">Цена за литр топлива</label>
+    </div>
+</div>
+<div id="button">
+    <button type="submit" onclick="">Посчитать</button>
+</div>
+<div>
+    <div id="spent">
+        <input type="text" id="spentInput">
+        <label for="spentInput">Потратил топлива</label>
+    </div>
+    <div id="sum">
+        <input type="text" id="sumInput">
+        <label for="sumInput">Потратил бабок</label>
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    $(document).ready(function(){
+        $('#button').on('click', function(){
+            let d = $('#distanceInput').val();
+            let c = $('#consumptionInput').val();
+            let p = $('#priceInput').val();
+
+            let fuel = d / c;
+            let sum = fuel * p;
+
+            $('#spentInput').val(fuel.toFixed(1));
+            $('#sumInput').val(sum.toFixed(2));
+        });
+    });
+</script>
