@@ -45,7 +45,7 @@
         $('#sumInput').attr('readonly', 'readonly');
 
         $('#button').on('click', function(){
-            let fuel = $('#distanceInput').val() / $('#consumptionInput').val();
+            let fuel = $('#distanceInput').val() * $('#consumptionInput').val() / 100;
             let sum = fuel * $('#priceInput').val();
 
             $('#spentInput').val(fuel.toFixed(1));
